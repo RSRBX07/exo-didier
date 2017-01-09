@@ -5,8 +5,12 @@
 second_per_year = 60*60*24*365
 puts " il y a #{second_per_year} secondes dans une année."
 
-#calcul de mon age en secondes
-puts "Quel est votre âge: ?"
-age = gets.chomp.to_i
+now = Time.now
 
-puts "Vous avez #{age*second_per_year} secondes." 
+#calcul de mon age en secondes
+puts "Quel est votre date de naissance : ? (annee-mois-jour hh:mm:ss)"
+anniv = gets.chomp
+
+puts Time.now - Time.new(anniv)
+
+# puts "Vous avez #{age*second_per_year} secondes."
