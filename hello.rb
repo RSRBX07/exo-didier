@@ -14,4 +14,7 @@ saisie= gets
 puts "Bienvenue #{saisie}"
 
 puts "Salut \n  Salut\n    Salut"
+
 puts "Salut #{saisie}"*3
+
+3.times { print "Salut #{saisie}" }
