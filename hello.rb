@@ -14,3 +14,4 @@ saisie= gets
 puts "Bienvenue #{saisie}"
 
 puts "Salut \n  Salut\n    Salut"
+puts "Salut #{saisie}"*3
