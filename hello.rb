@@ -12,3 +12,5 @@ puts "une nouvelle ligne"
 print "Comment t'appelles-tu?"
 saisie= gets
 puts "Bienvenue #{saisie}"
+
+puts "Salut \n  Salut\n    Salut"
