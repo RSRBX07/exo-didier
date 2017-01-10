@@ -37,11 +37,13 @@ Ma poul' n'a plus aucun poussin…
 puts "Allongeons la jambe
 Chanson de marche"
 
-(1..28).each do |nombre|
-  puts nombre
-  2.times {puts "Ma poul' n'a plus qu' #{30 - nombre} poussins,"}
+# (1..28).each do |nombre|
+(1..28).each do |poussins_perdus|
+  # puts nombre
+  2.times {puts "Ma poul' n'a plus qu' #{30 - poussins_perdus} poussins,"}
   puts {"Elle en avait trente.
   Allongeons la jambe,"}
+  puts "Car la route est longue."
   2.times {puts "Allongeons la jambe, la jambe
   Car la route est longue."}
 end
