@@ -1,12 +1,12 @@
 require 'date'
 
+available_balls = (1..45).to_a
 tirage = []
-boules = []
-for i in 1..45 do
-   boules.push(i)
+(0..4).each do
+   tirage.push(available_balls.shuffle.delete_at 5)
 end
   # puts boules
-5.times {tirage.push(rand(1..46))}
+# 5.times {tirage.push(rand(1..46))}
 
 puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
 
