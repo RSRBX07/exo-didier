@@ -5,8 +5,16 @@ my_grid = []
 
 puts "Entrez vos numeros: ?"
 (0..4).each do
-
-  my_grid.push(gets.to_i)
+  fini = false
+  while !fini do
+    numero_valid = gets.to_i
+    if numero_valid > 0 && numero_valid < 46
+      my_grid.push(numero_valid)
+      fini=true
+    else
+      puts "pas bon #{numero_valid}"
+    end
+  end
 end
 
 puts "Votre grille de jeu : #{my_grid.sort}"
