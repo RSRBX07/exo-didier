@@ -8,11 +8,12 @@ puts "Entrez vos numeros: ?"
   fini = false
   while !fini do
     numero_valid = gets.to_i
-    if numero_valid > 0 && numero_valid < 46
+    # Check if number is between 1 and 45 and number is not already selected
+    if numero_valid > 0 && numero_valid < 46 && !my_grid.include?(numero_valid)
       my_grid.push(numero_valid)
       fini=true
     else
-      puts "pas bon #{numero_valid}"
+      puts "Vérifiez votre saisie, #{numero_valid} n'est pas valide"
     end
   end
 end
