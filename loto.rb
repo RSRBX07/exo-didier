@@ -29,12 +29,11 @@ end
 
 puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
 
-
-# Retirer la boule déjà sortie
-
+#is today a friday 13 ?
 cagnotte = Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
 
 cagnotte = rand(800..1100)
 puts "Le super tirage du vendredi 13 janvier sera de #{cagnotte} millions d'euro"
-
-puts my_grid.sort - tirage.sort
+puts
+result = my_grid.sort & tirage.sort
+puts result.count != 0 ? result :  "Vous n'avez pas de numeros gagnants - retentez votre chance!"
