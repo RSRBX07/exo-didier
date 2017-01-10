@@ -13,4 +13,7 @@ anniv = gets.chomp
 
 puts Time.now - Time.new(anniv)
 
-# puts "Vous avez #{age*second_per_year} secondes."
+# Quel est le nouveau point d'origine de Time en ruby 2
+
+
+ puts " #{now.to_i / second_per_year}"
