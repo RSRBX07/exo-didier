@@ -1,3 +1,6 @@
+
+meta = { "place" => "Roubaix", "author" => "Didier" , "date" => "2016-01"}
+
 def roll(cheated_value=nil)
    cheated_value ? cheated_value : (1+rand(6))
   # if cheated_value
@@ -25,3 +28,5 @@ while rep != "n" do
   rep = gets.chomp
 
 end
+
+puts "Ce programme est une realisation extraordinaire de #{meta["author"]} en #{meta["date"]} à #{meta["place"]}"
