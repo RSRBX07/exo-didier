@@ -1,0 +1,12 @@
+puts "Entrer un nombre: "
+case gets.to_i
+  when 1 : puts "un"
+  when 2 : puts "deux"
+  when 3 : puts "trois"
+  when 4 : puts "quatre"
+  when 5 : puts "cinq"
+  when 6 : puts "six"
+  when 7 : puts "sept"
+  when 8 : puts "huit"
+  when 9 : puts "neuf"
+  else "On vous a demandé un chiffre non?"
