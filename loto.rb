@@ -33,7 +33,7 @@ class Loto
               puts "Vérifiez votre saisie, #{numero_valid} n'est pas valide"
             end
         end
-        g_grid << numero_valid
+        # g_grid << numero_valid
     end
     g_grid
   end

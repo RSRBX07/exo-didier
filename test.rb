@@ -1,7 +1,22 @@
+require './int_to_word.rb'
+
+# trans_to_french = Translate_number_to_french.new
+puts Translate_number_to_french.game 5
+puts Translate_number_to_french.game 15
+puts Translate_number_to_french.game 51
+puts Translate_number_to_french.game 25
+puts Translate_number_to_french.game 05
+puts Translate_number_to_french.game 33
+puts Translate_number_to_french.game 20
+puts Translate_number_to_french.game 58
+puts Translate_number_to_french.game 65
+puts Translate_number_to_french.game 68
+
+
 require './dice.rb'
 
-
-# Lancer les des:
+puts ;puts
+puts  "Lancer les des"
 faces = [1,2,3,4,5,6]
 my_dice = Dice.new
 
@@ -20,6 +35,8 @@ end
 
 
 #Test de loto.rb
+puts ;puts
+puts  "Jouer au loto version 1"
 require './loto.rb'
 puts "Test du loto v1"
 
@@ -33,8 +50,9 @@ puts "Votre grille de jeu : #{grille.sort}"
 
 
 
-
 #test de loto2.rb
+puts ;puts
+puts  "Jouer au loto version 2"
 require './loto2.rb'
 puts "Test du loto v2"
 
