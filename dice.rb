@@ -3,7 +3,7 @@ class Dice
 end
 
 
-meta = { "place" => "Roubaix", "author" => "Didier" , "date" => "2016-01"}
+meta = { "place" => "Roubaix", "author" => "Didier" , "date" => "2017-01"}
 
 def roll(cheated_value=nil)
    cheated_value ? cheated_value : (1+rand(6))
