@@ -1,5 +1,7 @@
 require './dice.rb'
 
+
+# Lancer les des:
 faces = [1,2,3,4,5,6]
 my_dice = Dice.new
 
@@ -15,3 +17,34 @@ while rep != "n" do
   rep = gets.chomp
 
 end
+
+
+#Test de loto.rb
+require './loto.rb'
+puts "Test du loto v1"
+
+my_first_loto = Loto.new
+
+
+
+#test de loto2.rb
+require './loto2.rb'
+puts "Test du loto v2"
+
+my_loto = Loto2.new
+
+grille = my_loto.demande_de_grille
+
+refined = my_loto.input_refinement grille
+
+draw = my_loto.make_draw
+
+# sorting grid and draw
+sorted_grid = refined.sort
+sorted_draw = draw.sort
+
+# verifier la grille
+# comparons la grille et le tirage
+winner = sorted_grid == sorted_draw
+
+my_loto.show_result winner
