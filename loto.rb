@@ -7,7 +7,8 @@ class Loto
 
 
   def game_closed?
-    @tirage.empty? ? true : false
+    # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
+    !!@tirage.empty? ? true : false
   end
 
   # enregistrer la grille pour un tirage

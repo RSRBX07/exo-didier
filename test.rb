@@ -26,7 +26,7 @@ puts "Test du loto v1"
 my_loto = Loto.new
 
 grille = my_loto.get_grid
-grille = grille.validate_grid
+grille = my_loto.validate_grid grille
 
 puts "Votre grille de jeu : #{grille.sort}"
 
