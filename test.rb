@@ -23,22 +23,12 @@ end
 require './loto.rb'
 puts "Test du loto v1"
 
-my_first_loto = Loto.new
+my_loto = Loto.new
 
+grille = my_loto.get_grid
+grille = grille.validate_grid
 
-
-# puts "Votre grille de jeu : #{my_first_loto.sort}"
-#
-# puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
-#
-# #is today a friday 13 ?
-# cagnotte = Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
-#
-# puts "Le super tirage du vendredi 13 janvier sera de #{cagnotte} millions d'euro"
-# puts
-# result = my_grid.sort & tirage.sort
-# puts result.count != 0 ? result :  "Vous n'avez pas de numeros gagnants - retentez votre chance!"
-
+puts "Votre grille de jeu : #{grille.sort}"
 
 
 

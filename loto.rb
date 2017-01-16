@@ -3,7 +3,7 @@ require 'date'
 class Loto
 
   available_balls = (1..45).to_a
-  my_grid = []
+  # my_grid = []
 
 
   def game_closed?
@@ -46,25 +46,25 @@ class Loto
     @tirage
   end
 
-  # creer ma grille
-  my_grid = get_grid
-
-  # valider/enregistrer ma grille
-  my_grid = validate_grid my_grid
-
-  puts "Votre grille de jeu : #{my_grid.sort}"
-
-  tirage = draw
-
-  puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
-
-  #is today a friday 13 ?
-  cagnotte = Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
-
-  puts "Le super tirage du vendredi 13 janvier sera de #{cagnotte} millions d'euro"
-  puts
-  result = my_grid.sort & tirage.sort
-  puts result.count != 0 ? result :  "Vous n'avez pas de numeros gagnants - retentez votre chance!"
-
-
 end
+
+
+# # creer ma grille
+# my_grid = get_grid
+#
+# # valider/enregistrer ma grille
+# my_grid = validate_grid my_grid
+#
+# puts "Votre grille de jeu : #{my_grid.sort}"
+#
+# tirage = draw
+#
+# puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
+#
+# #is today a friday 13 ?
+# cagnotte = Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
+#
+# puts "Le super tirage du vendredi 13 janvier sera de #{cagnotte} millions d'euro"
+# puts
+# result = my_grid.sort & tirage.sort
+# puts result.count != 0 ? result :  "Vous n'avez pas de numeros gagnants - retentez votre chance!"
