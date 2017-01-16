@@ -47,7 +47,13 @@ grille = my_loto.validate_grid grille
 
 puts "Votre grille de jeu : #{grille.sort}"
 
-
+if my_loto.game_closed?
+  puts "souhaitez vous valider cette grille ?"
+  rep = gets.chomp
+  gets
+else
+  puts "Le tirage est déjà effectué - "
+end
 
 
 #test de loto2.rb
