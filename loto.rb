@@ -25,8 +25,8 @@ class Loto
         while !fini do
           numero_valid = gets.to_i
           # Check if number is between 1 and 45 and number is not already selected
-            if numero_valid > 0 && numero_valid < 46 && !my_grid.include?(numero_valid)
-              my_grid.push(numero_valid)
+            if numero_valid > 0 && numero_valid < 46 && !g_grid.include?(numero_valid)
+              g_grid.push(numero_valid)
               fini=true
             else
               puts "Vérifiez votre saisie, #{numero_valid} n'est pas valide"
