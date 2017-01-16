@@ -5,14 +5,20 @@ class Loto
   available_balls = (1..45).to_a
   my_grid = []
 
+
+  def game_closed?
+    @tirage.empty? ? true : false
+  end
+
   # enregistrer la grille pour un tirage
   def validate_grid grid
-    @validated_grids ||= []
-    @validated_grids << grid
+      @validated_grids ||= []
+      @validated_grids << grid
   end
 
   # choisir les numeros d'une grille
   def get_grid
+    g_grid = []
     puts "Entrez vos numeros: ?"
     (0..4).each do
         fini = false
@@ -26,18 +32,29 @@ class Loto
               puts "Vérifiez votre saisie, #{numero_valid} n'est pas valide"
             end
         end
+        g_grid << numero_valid
     end
+    g_grid
   end
 
   # Réaliser le tirage d'un loto
   def draw
-    tirage = []
+    @tirage = []
     (0..4).each do
-       tirage.push(available_balls.shuffle.delete_at 5)
+       @tirage.push(available_balls.shuffle.delete_at 5)
     end
+    @tirage
   end
 
+  # creer ma grille
+  my_grid = get_grid
+
+  # valider/enregistrer ma grille
+  my_grid = validate_grid my_grid
+
   puts "Votre grille de jeu : #{my_grid.sort}"
+
+  tirage = draw
 
   puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
 
