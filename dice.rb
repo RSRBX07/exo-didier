@@ -1,4 +1,8 @@
 
+class Dice
+end
+
+
 meta = { "place" => "Roubaix", "author" => "Didier" , "date" => "2016-01"}
 
 def roll(cheated_value=nil)
