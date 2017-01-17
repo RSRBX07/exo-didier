@@ -1,47 +1,37 @@
 require './int_to_word.rb'
 
-# trans_to_french = Translate_number_to_french.new
-# puts Translate_number_to_french.game 5
-# puts Translate_number_to_french.game 15
-# puts Translate_number_to_french.game 51
-# puts Translate_number_to_french.game 25
-# puts Translate_number_to_french.game 05
-# puts Translate_number_to_french.game 33
-# puts Translate_number_to_french.game 20
-# puts Translate_number_to_french.game 58
-# puts Translate_number_to_french.game 65
-# puts Translate_number_to_french.game 68
 puts 42.in_french
 puts 15.in_french
 puts 51.in_french
 puts 70.in_french
 puts 65.in_french
 puts 25.in_french
-# puts in_french
-# puts in_french
-# puts in_french
-# puts in_french
+puts 75.in_french
+puts 85.in_french
+# puts 95.in_french
 
 
-require './dice.rb'
-
-puts ;puts
-puts  "Lancer les des"
-faces = [1,2,3,4,5,6]
-my_dice = Dice.new
-
-rep="z"
-while rep != "n" do
-
-  puts "lancé : #{faces[my_dice.roll]}"
-  puts "lancé : #{faces[my_dice.roll_pipe 5]}"
-
-  puts  "lancé via tableau  #{faces[rand 6]}"
-
-  puts "Nouveau lancé ? o/n"
-  rep = gets.chomp
+# require './dice.rb'
+#
+# puts ;puts
+# puts  "Lancer les des"
+# faces = [1,2,3,4,5,6]
+# my_dice = Dice.new
+#
+# rep="z"
+# while rep != "n" do
 
 end
+#
+#   puts "lancé : #{faces[my_dice.roll]}"
+#   puts "lancé : #{faces[my_dice.roll_pipe 5]}"
+#
+#   puts  "lancé via tableau  #{faces[rand 6]}"
+#
+#
+#   puts "Nouveau lancé ? o/n"
+#   rep = gets.chomp
+# end
 
 
 #Test de loto.rb
@@ -49,9 +39,7 @@ puts ;puts
 puts  "Jouer au loto version 1"
 require './loto.rb'
 puts "Test du loto v1"
-
-my_loto = Loto.new
-
+require 'delayed/command'
 grille = my_loto.get_grid
 grille = my_loto.validate_grid grille
 
@@ -65,6 +53,7 @@ else
   puts "Le tirage est déjà effectué - "
 end
 
+my_loto.draw
 
 #test de loto2.rb
 puts ;puts

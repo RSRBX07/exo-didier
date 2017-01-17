@@ -2,9 +2,7 @@ require 'date'
 
 class Loto
 
-  available_balls = (1..45).to_a
-  # my_grid = []
-
+  # available_balls = (1..45).to_a
 
   def game_closed?
     # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
@@ -42,9 +40,17 @@ class Loto
   def draw
     @tirage = []
     (0..4).each do
-       @tirage.push(available_balls.shuffle.delete_at 5)
+      @tirage.push(available_balls.shuffle.delete_at 5)
     end
     @tirage
+  end
+
+  private
+
+
+  def prize
+    #is today a friday 13 ?
+    Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
   end
 
 end

@@ -15,12 +15,6 @@ class Loto2
     return refined_grid
   end
 
-  def make_draw
-    tirage = (1..45).to_a.shuffle.take 5
-    # cheat
-    tirage = [1, 2 , 3 , 4 , 5]
-    return tirage
-  end
 
   def show_result result
     if result
@@ -29,4 +23,14 @@ class Loto2
       puts "Vous avez perdu"
     end
   end
+
+  private
+
+  def make_draw
+    tirage = (1..45).to_a.shuffle.take 5
+    # cheat
+    tirage = [1, 2 , 3 , 4 , 5]
+    return tirage
+  end
+
 end
