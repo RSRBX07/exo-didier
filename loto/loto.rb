@@ -2,9 +2,17 @@ require 'date'
 
 class Loto
 
+  attr_reader :tirage
+  attr_writer :tirage
+
   def game_closed?
     # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
-    !!@tirage
+    !!tirage
+  end
+
+  def initialize
+    puts "On initialise une instance de tirage du loto pour lequel on joue"
+    @tirage = []
   end
 
   # enregistrer la grille pour un tirage
@@ -36,9 +44,9 @@ class Loto
 
   # Réaliser le tirage d'un loto
   def draw
-    @tirage = []
+
     (0..4).each do
-      @tirage.push((1..45).to_a.shuffle.delete_at 5)
+      @tirage.push((1..45).to_a.shuffle.delete_at(5))
     end
     @tirage
   end
