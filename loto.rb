@@ -2,8 +2,6 @@ require 'date'
 
 class Loto
 
-  # available_balls = (1..45).to_a
-
   def game_closed?
     # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
     !@tirage
@@ -40,13 +38,12 @@ class Loto
   def draw
     @tirage = []
     (0..4).each do
-      @tirage.push(available_balls.shuffle.delete_at 5)
+      @tirage.push((1..45).to_a.shuffle.delete_at 5)
     end
     @tirage
   end
 
   private
-
 
   def prize
     #is today a friday 13 ?

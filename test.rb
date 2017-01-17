@@ -51,32 +51,35 @@ if my_loto.game_closed?
   puts "souhaitez vous valider cette grille ?"
   rep = gets.chomp
   gets
+  my_loto.validate_grid grille
 else
   puts "Le tirage est déjà effectué - La grille ne peut-pas etre validée."
 end
 
-my_loto.draw
+puts my_loto.draw
+puts @validated_grids
+
 
 #test de loto2.rb
-puts ;puts
-puts  "Jouer au loto version 2"
-require './loto2.rb'
-puts "Test du loto v2"
-
-my_loto = Loto2.new
-
-grille = my_loto.demande_de_grille
-
-refined = my_loto.input_refinement grille
-
-draw = my_loto.make_draw
-
-# sorting grid and draw
-sorted_grid = refined.sort
-sorted_draw = draw.sort
-
-# verifier la grille
-# comparons la grille et le tirage
-winner = sorted_grid == sorted_draw
-
-my_loto.show_result winner
+# puts ;puts
+# puts  "Jouer au loto version 2"
+# require './loto2.rb'
+# puts "Test du loto v2"
+#
+# my_loto = Loto2.new
+#
+# grille = my_loto.demande_de_grille
+#
+# refined = my_loto.input_refinement grille
+#
+# draw = my_loto.make_draw
+#
+# # sorting grid and draw
+# sorted_grid = refined.sort
+# sorted_draw = draw.sort
+#
+# # verifier la grille
+# # comparons la grille et le tirage
+# winner = sorted_grid == sorted_draw
+#
+# my_loto.show_result winner
