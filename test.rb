@@ -1,16 +1,26 @@
 require './int_to_word.rb'
 
 # trans_to_french = Translate_number_to_french.new
-puts Translate_number_to_french.game 5
-puts Translate_number_to_french.game 15
-puts Translate_number_to_french.game 51
-puts Translate_number_to_french.game 25
-puts Translate_number_to_french.game 05
-puts Translate_number_to_french.game 33
-puts Translate_number_to_french.game 20
-puts Translate_number_to_french.game 58
-puts Translate_number_to_french.game 65
-puts Translate_number_to_french.game 68
+# puts Translate_number_to_french.game 5
+# puts Translate_number_to_french.game 15
+# puts Translate_number_to_french.game 51
+# puts Translate_number_to_french.game 25
+# puts Translate_number_to_french.game 05
+# puts Translate_number_to_french.game 33
+# puts Translate_number_to_french.game 20
+# puts Translate_number_to_french.game 58
+# puts Translate_number_to_french.game 65
+# puts Translate_number_to_french.game 68
+puts 42.in_french
+puts 15.in_french
+puts 51.in_french
+puts 70.in_french
+puts 65.in_french
+puts 25.in_french
+# puts in_french
+# puts in_french
+# puts in_french
+# puts in_french
 
 
 require './dice.rb'

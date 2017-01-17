@@ -1,18 +1,18 @@
-class Translate_number_to_french
+class Fixnum
   # ecrire une methode
-  def self.game number
+  def in_french
     # Ajouter un tableau des correspondances
     digits = ["","un","deux","trois","quatre","cinq","six","sept","huit","neuf","dix","onze","douze","treize","quatorze","quinze","seize"]
-    dizaines = ["","dix","vingt","trente","quarante","cinquante","soixante"]
+    dizaines = ["","dix","vingt","trente","quarante","cinquante","soixante","soixante-dix","quatre-vingt"]
     #qui prend une instance de fixnum en argument
     # puts "Entrer un nombre "
     # #qui retourne la chaine de caracteres du chiffre en toutes lettres
-    return "zero" if number == 0
-    return  digits[number] if (0..16).include? number
+    return "zero" if self == 0
+    return  digits[self] if (0..16).include? self
 
 
-    dizaine = number.to_s[0].to_i
-    unite = number.to_s[1].to_i
+    dizaine = self.to_s[0].to_i
+    unite = self.to_s[1].to_i
 
     dizaines[dizaine] + case unite
       when 1
@@ -24,8 +24,8 @@ class Translate_number_to_french
       end
 
   end
-end # Fin de la classe  Translate_number_to_french
-# 
+end # Fin de la classe  in_french
+#
 # puts game 5
 # puts game 15
 # puts game 51
