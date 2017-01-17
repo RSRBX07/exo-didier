@@ -4,7 +4,7 @@ class Loto
 
   def game_closed?
     # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
-    !@tirage
+    !!@tirage
   end
 
   # enregistrer la grille pour un tirage
