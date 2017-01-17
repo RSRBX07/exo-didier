@@ -21,7 +21,7 @@ puts 85.in_french
 # rep="z"
 # while rep != "n" do
 
-end
+# end
 #
 #   puts "lancé : #{faces[my_dice.roll]}"
 #   puts "lancé : #{faces[my_dice.roll_pipe 5]}"
@@ -35,13 +35,15 @@ end
 
 
 #Test de loto.rb
+require './loto.rb'
+
 puts ;puts
 puts  "Jouer au loto version 1"
-require './loto.rb'
 puts "Test du loto v1"
-require 'delayed/command'
+
+my_loto = Loto.new
 grille = my_loto.get_grid
-grille = my_loto.validate_grid grille
+# grille = my_loto.validate_grid grille
 
 puts "Votre grille de jeu : #{grille.sort}"
 
@@ -50,7 +52,7 @@ if my_loto.game_closed?
   rep = gets.chomp
   gets
 else
-  puts "Le tirage est déjà effectué - "
+  puts "Le tirage est déjà effectué - La grille ne peut-pas etre validée."
 end
 
 my_loto.draw
