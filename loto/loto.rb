@@ -44,7 +44,6 @@ class Loto
 
   # Réaliser le tirage d'un loto
   def draw
-
     (0..4).each do
       @tirage.push((1..45).to_a.shuffle.delete_at(5))
     end
