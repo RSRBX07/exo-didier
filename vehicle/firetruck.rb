@@ -1,0 +1,3 @@
+class Firetruck < Vehicle
+  
+end

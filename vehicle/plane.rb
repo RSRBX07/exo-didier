@@ -1,3 +1,4 @@
+require './vehicle'
 class Plane < Vehicle
 
   attr_reader :flying_state
@@ -5,6 +6,7 @@ class Plane < Vehicle
 
   def initialize
     @flying_state = "false"
+    super
   end
 
   def take_off
