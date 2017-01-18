@@ -2,7 +2,7 @@ require_relative '../vehicle/vehicle.rb'
 
 RSpec.describe Vehicle do
   it 'fait qqchose' do
-    expect(Vehicle.count).to equal 0
+    expect(Vehicle.count).to equal nil
     #
   end
 
