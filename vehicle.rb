@@ -5,8 +5,8 @@ class Vehicle
     @position = "Roubaix"
   end
 
-  def move
-    "I'm moving"
+  def move new_position
+    "I'm moving from #{@position} to #{new_position}"
   end
 
 end
