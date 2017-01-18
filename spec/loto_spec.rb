@@ -21,11 +21,32 @@ RSpec.describe Loto do
     expect(loto_draw.size).to equal 5
     expect(loto_draw).to eql loto.draw
   end
+
   it 'validate a grid register this grid' do
      loto = Loto.new
      grid = [1,2,3,4,5]
      validated_grids = loto.validate_grid grid
      expect(validated_grids).to include grid
   end
-  it 'reject grid validation after draw'
+
+  it "tells if draw is done" do
+    loto = Loto.new
+    expect(loto.draw_done?).to be false
+    loto.draw
+    expect(loto.draw_done?).to be true
+  end
+
+  it 'reject grid validation after draw' do
+    loto = Loto.new
+    grid_before = [5,6,7,8,9]
+    validated_grids = loto.validate_grid grid_before
+    expect(validated_grids).to include grid_before
+
+    loto.draw
+    grid_after = [1,2,3,4,5]
+    validated_grids = loto.validate_grid grid_after
+    expect(validated_grids).to include grid_before
+    expect(validated_grids).not_to include grid_after
+
+  end
 end

@@ -28,10 +28,18 @@ class Loto
   # pour le loto courant
   def validate_grid grid
     #verifier que le tirage n'a pas encore eu lieu
+    if !draw_done?
+      @saved_grids ||= []
+      @saved_grids.push grid
+    end
 
-    @saved_grids ||= []
-    @saved_grids.push grid
   end
+
+  def draw_done?
+    # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
+    !!@picked_balls
+  end
+
   # demander une grille de jeu
 
   # affichage du montant de la cagnote
