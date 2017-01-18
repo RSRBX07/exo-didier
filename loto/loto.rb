@@ -1,81 +1,74 @@
 require 'date'
-
 class Loto
 
-  attr_reader :tirage
-  attr_writer :tirage
-
-  def game_closed?
-    # le double !! (double négation) permet de solutionner le cas ou tirage n'est pas encore defini
-    !!tirage
+  def self.get_grid
+    grid = []
+    5.times do
+      input = gets.to_i
+      grid << input
+    end
+    grid
   end
 
-  def initialize
-    puts "On initialise une instance de tirage du loto pour lequel on joue"
-    @tirage = []
+  def self.get_flash
+    (1..45).to_a.shuffle.take 5
   end
 
-  # enregistrer la grille pour un tirage
+  def has_winner?
+    #comprer tous les bulletins valides avec la grille gagnante
+    sorted_draw = draw.sort
+    @saved_grids.each do |grid|
+      sorted_grid = grid.sort
+      return true if sorted_grid == sorted_draw
+    end
+    return false
+  end
+
+  # enregistre une grille
+  # pour le loto courant
   def validate_grid grid
-      @validated_grids ||= []
-      @validated_grids << grid
+    #verifier que le tirage n'a pas encore eu lieu
+
+    @saved_grids ||= []
+    @saved_grids.push grid
+  end
+  # demander une grille de jeu
+
+  # affichage du montant de la cagnote
+  # entre 100 et 500.000 Euros
+  # le vendredi 13, la cagnote est de 2 millions
+  def vendredi_13?
+    Date.today.day == 13 && Date.today.friday?
   end
 
-  # choisir les numeros d'une grille
-  def get_grid
-    g_grid = []
-    puts "Entrez vos numeros: ?"
-    (0..4).each do
-        fini = false
-        while !fini do
-          numero_valid = gets.to_i
-          # Check if number is between 1 and 45 and number is not already selected
-            if numero_valid > 0 && numero_valid < 46 && !g_grid.include?(numero_valid)
-              g_grid.push(numero_valid)
-              fini=true
-            else
-              puts "Vérifiez votre saisie, #{numero_valid} n'est pas valide"
-            end
-        end
-        # g_grid << numero_valid
+  def check_grid grid
+    # afficher si gagne ou perdu
+    if grid.sort == draw.sort
+      puts "You win #{prize}!"
+    else
+      puts "You loose !"
     end
-    g_grid
   end
 
-  # Réaliser le tirage d'un loto
   def draw
-    (0..4).each do
-      @tirage.push((1..45).to_a.shuffle.delete_at(5))
-    end
-    @tirage
+    available_balls = (1..45).to_a
+    # shuffle balls and take 5
+    # @picked_balls ||= available_balls.shuffle.take(5)
+    @picked_balls = @picked_balls || available_balls.shuffle.take(5)
+
+    puts "Le tirage du jour est : #{@picked_balls.sort}"
+    @picked_balls
   end
+
 
   private
 
   def prize
-    #is today a friday 13 ?
-    Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
+    if vendredi_13?
+      2_000_000
+    else
+      100_000
+    end
   end
 
 end
-
-
-# # creer ma grille
-# my_grid = get_grid
-#
-# # valider/enregistrer ma grille
-# my_grid = validate_grid my_grid
-#
-# puts "Votre grille de jeu : #{my_grid.sort}"
-#
-# tirage = draw
-#
-# puts "Le resultat du tirage du #{Time.now} est #{tirage.sort}"
-#
-# #is today a friday 13 ?
-# cagnotte = Date.today.mday == 13 && Date.today.friday? ? 2000000 : rand(800..1100)
-#
-# puts "Le super tirage du vendredi 13 janvier sera de #{cagnotte} millions d'euro"
-# puts
-# result = my_grid.sort & tirage.sort
-# puts result.count != 0 ? result :  "Vous n'avez pas de numeros gagnants - retentez votre chance!"
