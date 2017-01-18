@@ -28,11 +28,11 @@ class Loto
   # pour le loto courant
   def validate_grid grid
     #verifier que le tirage n'a pas encore eu lieu
-    if !draw_done?
-      @saved_grids ||= []
-      @saved_grids.push grid
-    end
 
+    @saved_grids ||= []
+    # TODO check draw isnot yet done
+    return  @saved_grids if draw_done?
+    @saved_grids.push grid
   end
 
   def draw_done?
