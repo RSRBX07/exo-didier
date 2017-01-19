@@ -1,5 +1,5 @@
 class Counter
-
+  attr_accessor :instance_count
 end
 
 class Vehicle
