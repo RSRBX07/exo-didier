@@ -1,8 +1,10 @@
 require_relative '../vehicle/vehicle.rb'
 
-RSpec.describe Vehicle do
-  it 'fait qqchose' do
-    expect(Vehicle.count).to equal nil
+RSpec.describe Plane do
+  it 'check if counter of instancied object increments' do
+    expect(Vehicle.count).to equal 0
+    boeing = Plane.new
+    expect(Vehicle.count).not_to equal 1
     #
   end
 

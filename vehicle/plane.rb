@@ -21,10 +21,4 @@ end
 
 
 boeing = Plane.new
-boeing.take_off
-puts Plane.count
-beechcraft = Plane.new
 puts Vehicle.count
-
-falcon50 = Plane.new
-p Vehicle.count
