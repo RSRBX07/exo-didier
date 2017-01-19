@@ -1,17 +1,17 @@
 # Classe compteur
 class Counter
 
-  file_path = "./tmp/counter.txt"
+  @file_path = "./tmp/counter.txt"
   def add_one
-    new_val = value + 1
-    File.open(file_path, "w") do |counter_file|
-      counter_file.write new_val
+    @read_value = value + 1
+    File.open("./tmp/counter.txt", "w") do |counter_file|
+      counter_file.write @read_value
     end
 
   end
 
   def value
-    File.open(file_path, "r") do |counter_file|
+    @read_value ||= File.open "./tmp/counter.txt", "r" do |counter_file|
       counter_file.each_line { |line| return line.to_i }
     end
   end
@@ -25,6 +25,7 @@ class Vehicle
     super
     @position = "Roubaix"
     @out_of_order = false
+    Counter.new.add_one
   end
 
   def move new_position
