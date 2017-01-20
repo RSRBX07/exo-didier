@@ -1,4 +1,4 @@
-require_relative '../vehicle/vehicle.rb'
+require_relative '../vehicle/plane.rb'
 
 RSpec.describe Plane do
   it 'check if counter of instancied object increments' do
