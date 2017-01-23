@@ -11,10 +11,8 @@ class Game < ApplicationRecord
     @players -= 1
   end
 
-  private
-
-  def initialize
-    @players = 0
+  def player
+    @players ||= 0
   end
 
 end
