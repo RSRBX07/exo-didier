@@ -11,8 +11,4 @@ class Game < ApplicationRecord
     @players -= 1
   end
 
-  def player
-    @players ||= 0
-  end
-
 end
