@@ -1,16 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<h1>
   <strong>Name:</strong>
   <%= @game.name %>
-</p>
+</h1>
+<h3>
+  For this draw you were <strong> <%= @game.players %></strong> players
+</h3>
 <p>
-  This game plays with <strong> <%= @game.players %></strong> players
-</p>
-<p>
-  <strong>Description:</strong>
+  <strong>Result of draw:</strong>
   <%= @game.description %>
 </p>
 
-<%= link_to 'Edit', edit_game_path(@game) %> |
+
+
+<!-- <%= link_to 'Edit', edit_game_path(@game) %> | -->
 <%= link_to 'Back', games_path %>
